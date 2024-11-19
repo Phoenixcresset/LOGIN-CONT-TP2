@@ -1,0 +1,14 @@
+services:
+  client:
+    build:
+      context: ./todolists-client
+    ports:
+      - "3000:3000"
+  
+  frontend:
+    build:
+      context: ./todolists-frontend
+    ports:
+      - "3006:3000"
+    depends_on:
+      - client
